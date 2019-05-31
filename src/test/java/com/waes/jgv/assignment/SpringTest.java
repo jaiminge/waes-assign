@@ -20,11 +20,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.waes.jgv.assignment.bundle.MessageBundle;
 
-/**
- * 
- * @author carlos
- *
- */
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment=WebEnvironment.DEFINED_PORT)
 public abstract class SpringTest extends DiffTest{

@@ -17,10 +17,10 @@ import com.waes.jgv.assignment.dto.DiffDTO;
 public class DiffUnitTest extends DiffTest{
 	
 	private Diff diff;
-	String carlos = createJSON("Carlos",37);
-	String silvana = createJSON("Silvana", 39);
-	String silva = createJSON("Silva", 39);
-	String silvan = createJSON("Silvan", 39);
+	String jaime = createJSON("Jaime",37);
+	String barbara = createJSON("barbara", 39);
+	String barby = createJSON("barby", 39);
+	String barb = createJSON("barb", 39);
 	
 	@After
 	public void after(){
@@ -29,7 +29,7 @@ public class DiffUnitTest extends DiffTest{
 	
 	@Test
 	public void isEquals(){
-		DiffDTO diffDTO = new DiffDTO(1L, carlos, carlos); 
+		DiffDTO diffDTO = new DiffDTO(1L, jaime, jaime); 
 		diff = new Diff(diffDTO);
 		Diff diffCompare = new Diff(diffDTO);
 		Assert.assertTrue(diff.equals(diffCompare));
@@ -39,7 +39,7 @@ public class DiffUnitTest extends DiffTest{
 	
 	@Test
 	public void isSameValues(){
-		DiffDTO diffDTO = new DiffDTO(1L, carlos, carlos); 
+		DiffDTO diffDTO = new DiffDTO(1L, jaime, jaime); 
 		diff = new Diff(diffDTO);
 		Assert.assertTrue(diff.isSameValues());
 		
@@ -47,7 +47,7 @@ public class DiffUnitTest extends DiffTest{
 	
 	@Test
 	public void isNotSameValues(){
-		DiffDTO diffDTO = new DiffDTO(1L, carlos, silvana); 
+		DiffDTO diffDTO = new DiffDTO(1L, jaime, barbara); 
 		diff = new Diff(diffDTO);
 		Assert.assertFalse(diff.isSameValues());
 		
@@ -55,7 +55,7 @@ public class DiffUnitTest extends DiffTest{
 	
 	@Test
 	public void isSameEncoded() throws DiffException{
-		DiffDTO diffDTO = new DiffDTO(1L, carlos, carlos); 
+		DiffDTO diffDTO = new DiffDTO(1L, jaime, jaime); 
 		diff = new Diff(diffDTO);
 		Assert.assertTrue(diff.isSameEncoded());
 		
@@ -63,21 +63,21 @@ public class DiffUnitTest extends DiffTest{
 	
 	@Test
 	public void isNotSameEncoded() throws DiffException{
-		DiffDTO diffDTO = new DiffDTO(1L, carlos, silva); 
+		DiffDTO diffDTO = new DiffDTO(1L, jaime, barby); 
 		diff = new Diff(diffDTO);
 		Assert.assertFalse(diff.isSameEncoded());
 	}
 	
 	@Test(expected=DiffException.class)
 	public void isSameEncodedException() throws DiffException{
-		DiffDTO diffDTO = new DiffDTO(1L, null, silva); 
+		DiffDTO diffDTO = new DiffDTO(1L, null, barby); 
 		diff = new Diff(diffDTO);
 		diff.isSameEncoded();
 	}		
 	
 	@Test
 	public void isSameSize() throws DiffException{
-		DiffDTO diffDTO = new DiffDTO(1L, carlos, silvan); 
+		DiffDTO diffDTO = new DiffDTO(1L, jaime, barb); 
 		diff = new Diff(diffDTO);
 		Assert.assertTrue(diff.isSameSize());
 		
@@ -85,7 +85,7 @@ public class DiffUnitTest extends DiffTest{
 	
 	@Test
 	public void isNotSameSize() throws DiffException{
-		DiffDTO diffDTO = new DiffDTO(1L, carlos, silvana); 
+		DiffDTO diffDTO = new DiffDTO(1L, jaime, barbara); 
 		diff = new Diff(diffDTO);
 		Assert.assertFalse(diff.isSameSize());
 		
@@ -94,35 +94,35 @@ public class DiffUnitTest extends DiffTest{
 	
 	@Test
 	public void isValidStates() throws DiffException{
-		DiffDTO diffDTO = new DiffDTO(1L, carlos, silvan); 
+		DiffDTO diffDTO = new DiffDTO(1L, jaime, barb); 
 		diff = new Diff(diffDTO);
 		diff.validateConditionsToInsight();
 	}		
 	
 	@Test(expected=DiffException.class)
 	public void isNotValidStateLeft() throws DiffException{
-		DiffDTO diffDTO = new DiffDTO(1L, null, silvan); 
+		DiffDTO diffDTO = new DiffDTO(1L, null, barb); 
 		diff = new Diff(diffDTO);
 		diff.validateConditionsToInsight();
 	}		
 	
 	@Test(expected=DiffException.class)
 	public void isNotValidStateRight() throws DiffException{
-		DiffDTO diffDTO = new DiffDTO(1L, carlos, null); 
+		DiffDTO diffDTO = new DiffDTO(1L, jaime, null); 
 		diff = new Diff(diffDTO);
 		diff.validateConditionsToInsight();
 	}		
 
 	@Test(expected=DiffException.class)
 	public void isNotValidState() throws DiffException{
-		DiffDTO diffDTO = new DiffDTO(1L, carlos, carlos); 
+		DiffDTO diffDTO = new DiffDTO(1L, jaime, jaime); 
 		diff = new Diff(diffDTO);
 		diff.validateConditionsToInsight();
 	}		
 	
 	@Test
 	public void getInsight() throws DiffException{
-		DiffDTO diffDTO = new DiffDTO(1L, carlos, silvan); 
+		DiffDTO diffDTO = new DiffDTO(1L, jaime, barb); 
 		diff = new Diff(diffDTO);
 		String insight = diff.getInsight();
 		Assert.assertTrue(!insight.isEmpty());

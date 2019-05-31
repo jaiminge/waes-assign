@@ -131,13 +131,13 @@ public class DiffIntTest extends SpringTest {
 	@Test
 	@Rollback
 	public void shouldUpdateLeftFromClient() throws UnsupportedEncodingException, DiffException {
-		serviceClient.updateLeftValue(1l, createJSON("Carlos", 37));
+		serviceClient.updateLeftValue(1l, createJSON("Jaime", 36));
 	}	
 	
 	@Test
 	@Rollback
 	public void shouldUpdateRightFromClient() throws UnsupportedEncodingException, DiffException {
-		serviceClient.updateRightValue(1l, createJSON("Carlos", 37));
+		serviceClient.updateRightValue(1l, createJSON("Jaime", 36));
 	}	
 
 }

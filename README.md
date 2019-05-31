@@ -11,16 +11,6 @@ The results shall provide the following info in JSON format
 	So mainly offsets + length in the data
 Make assumptions in the implementation explicit, choices are good but need to be communicated
 
-
-### Prerequisites
-
-**Having a MySQL instance running on localhost:3306**
-
-* Run `startup.sql` script there. 
-* User the **"root"** user and **password** as password :P.
-* Or you can change it on `application.properties` (spring.datasource.username e spring.datasource.password)
-
-
 ## Running the tests
 
 * To test just execute as JUnit the classes 
@@ -36,15 +26,5 @@ Make assumptions in the implementation explicit, choices are good but need to be
 
 * [Spring Boot](https://spring.io/docs) - The framework used
 * [Maven](https://maven.apache.org/) - Dependency Management
-* [Swagger2](https://swagger.io/docs/) - To doc endpoint's api
 
-## Author
-
-* **Carlos Antonio Rodrigues** - [carlos-arodrigues](https://github.com/carlos-arodrigues)
-
-## Suggestions for improvement
-
-* Configure cache on requests to get insights
-* Could be load balanced by using of Spring Cloud
-* Other options will depends of the constraints.
 

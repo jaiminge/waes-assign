@@ -7,4 +7,4 @@ CREATE TABLE `waes`.`waesdiff` (
   PRIMARY KEY (`id`));
 
 INSERT INTO waes.waesdiff values(1, null, null);
-INSERT INTO waes.waesdiff values(2, '{"name":"Carlos","age":"37"}', '{"name":"Silvana","age":"39"}');
+INSERT INTO waes.waesdiff values(2, '{"name":"Jaime","age":"36"}', '{"name":"Barbara","age":"30"}');
